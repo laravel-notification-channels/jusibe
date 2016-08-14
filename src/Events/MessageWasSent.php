@@ -7,14 +7,10 @@ use Illuminate\Notifications\Notification;
 
 class MessageWasSent
 {
-    /**
-     * @var Notifiable
-     */
+    /** @var Notifiable */
     protected $notifiable;
 
-    /**
-     * @var Notification
-     */
+    /** @var Notification */
     protected $notification;
 
     /**

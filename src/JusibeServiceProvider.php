@@ -12,19 +12,18 @@ class JusibeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Bootstrap code here.
         $this->app->when(JusibeChannel::class)
             ->needs(JusibeClient::class)
             ->give(function () {
-                $jusibeConfig = config('services.jusibe');
+                $config = config('services.jusibe');
 
-                if (is_null($jusibeConfig)) {
+                if (is_null($config)) {
                     throw InvalidConfiguration::configurationNotSet();
                 }
 
                 return new JusibeClient(
-                    $jusibeConfig['key'],
-                    $jusibeConfig['token']
+                    $config['key'],
+                    $config['token']
                 );
             });
     }

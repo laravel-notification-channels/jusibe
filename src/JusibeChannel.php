@@ -24,10 +24,7 @@ class JusibeChannel
     protected $from;
 
     /**
-     * Create a new Jusibe channel instance.
-     *
      * @param  JusibeClient  $jusibe
-     * @return void
      */
     public function __construct(JusibeClient $jusibe)
     {
@@ -37,9 +34,11 @@ class JusibeChannel
     /**
      * Send the given notification.
      *
-     * @param  mixed  $notifiable
-     * @param  \Illuminate\Notifications\Notification  $notification
-     * @return string
+     * @param  mixed $notifiable
+     * @param  \Illuminate\Notifications\Notification $notification
+     * @return mixed
+     *
+     * @throws \NotificationChannels\Jusibe\Exceptions\CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
     {
@@ -65,7 +64,7 @@ class JusibeChannel
             ])->getResponse();
 
             return $response;
-        } catch (DomainException $e) {
+        } catch (DomainException $exception) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($exception);
         }
     }

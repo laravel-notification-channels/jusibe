@@ -4,6 +4,8 @@ namespace NotificationChannels\OneSignal\Test;
 
 use Mockery;
 use GuzzleHttp\Psr7\Response;
+use NotificationChannels\Jusibe\Test\Notifiable;
+use NotificationChannels\Jusibe\Test\TestNotification;
 use Orchestra\Testbench\TestCase;
 use NotificationChannels\Jusibe\JusibeChannel;
 use Unicodeveloper\Jusibe\Jusibe as JusibeClient;
@@ -11,7 +13,7 @@ use NotificationChannels\Jusibe\Exceptions\CouldNotSendNotification;
 
 class JusibeChannelTest extends TestCase
 {
-    /** @var Mockery\Mock */
+    /** @var \Mockery\Mock */
     protected $jusibe;
 
     /** @var \NotificationChannels\Jusibe\JusibeChannel */
@@ -37,9 +39,9 @@ class JusibeChannelTest extends TestCase
         $this->jusibe->shouldReceive('sendSMS')
             ->once()
             ->with([
-                'to' => '7089740923',
-                'from' => 'PROSPER DATING NETWORK',
-                'message' => 'Test! Test! Test!',
+                'to' => '+1234567890',
+                'from' => 'prosper',
+                'message' => 'myMessage',
             ])
             ->andReturn($response);
         $this->channel->send(new Notifiable(), new TestNotification());
@@ -52,9 +54,9 @@ class JusibeChannelTest extends TestCase
         $this->jusibe->shouldReceive('sendSMS')
             ->once()
             ->with([
-                'to' => '7089740923',
-                'from' => 'PROSPER DATING NETWORK',
-                'message' => 'Test! Test! Test!',
+                'to' => '+1234567890',
+                'from' => 'prosper',
+                'message' => 'myMessage',
             ])
             ->andReturn($response);
         $this->setExpectedException(CouldNotSendNotification::class);

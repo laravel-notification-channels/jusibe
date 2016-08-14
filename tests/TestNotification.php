@@ -10,7 +10,7 @@ class TestNotification extends Notification
     public function toJusibe($notifiable)
     {
         return (new JusibeMessage)
-                ->content('I love you Noyo')
-                ->from('PROSPER');
+                ->content('myMessage')
+                ->from('+1234567890');
     }
 }
