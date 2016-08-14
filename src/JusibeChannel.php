@@ -61,13 +61,12 @@ class JusibeChannel
             $response = $this->jusibe->sendSMS([
                 'to' => $to,
                 'from' => $from,
-                'message' => trim($message->content)
+                'message' => trim($message->content),
             ])->getResponse();
 
             return $response;
-        } catch(DomainException $e) {
+        } catch (DomainException $e) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($exception);
         }
     }
 }
-
