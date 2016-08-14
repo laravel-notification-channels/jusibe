@@ -1,0 +1,40 @@
+{
+    "name": "unicodeveloper/laravel-notification-channel-jusibe",
+    "description": "Jusibe SMS Channel for Laravel 5.3",
+    "homepage": "https://github.com/laravel-notification-channels/jusibe-ng",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Prosper Otemuyiwa",
+            "email": "prosperotemuyiwa@gmail.com",
+            "homepage": "http://goodheads.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "unicodeveloper/jusibe-php-lib": "1.0.*",
+        "illuminate/notifications": "^5.3@dev",
+        "illuminate/support": "^5.3@dev",
+        "illuminate/events": "^5.3@dev"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.5",
+        "orchestra/testbench": "^3.3@dev",
+        "phpunit/phpunit": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "NotificationChannels\\Jusibe\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NotificationChannels\\Jusibe\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
