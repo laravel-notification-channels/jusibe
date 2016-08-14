@@ -117,7 +117,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 ## Credits
 
 - [Prosper Otemuyiwa](https://github.com/unicodeveloper)
-- - [All Contributors](../../contributors)
+- [All Contributors](../../contributors)
 
 ## License
 
