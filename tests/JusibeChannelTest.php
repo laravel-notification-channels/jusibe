@@ -39,7 +39,7 @@ class JusibeChannelTest extends TestCase
             ->with([
                 'to' => '7089740923',
                 'from' => 'PROSPER DATING NETWORK',
-                'message' => 'Test! Test! Test!'
+                'message' => 'Test! Test! Test!',
             ])
             ->andReturn($response);
         $this->channel->send(new Notifiable(), new TestNotification());
@@ -54,7 +54,7 @@ class JusibeChannelTest extends TestCase
             ->with([
                 'to' => '7089740923',
                 'from' => 'PROSPER DATING NETWORK',
-                'message' => 'Test! Test! Test!'
+                'message' => 'Test! Test! Test!',
             ])
             ->andReturn($response);
         $this->setExpectedException(CouldNotSendNotification::class);

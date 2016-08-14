@@ -14,16 +14,16 @@ class CouldNotSendNotification extends Exception
     }
 
     /**
-    * @return static
-    */
+     * @return static
+     */
     public static function missingFrom()
     {
         return new static('Notification was not sent. Missing `from` number.');
     }
 
     /**
-    * @return static
-    */
+     * @return static
+     */
     public static function missingTo()
     {
         return new static('Notification was not sent. Missing `to` number.');

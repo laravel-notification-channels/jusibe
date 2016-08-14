@@ -16,10 +16,9 @@ class JusibeServiceProvider extends ServiceProvider
         $this->app->when(JusibeChannel::class)
             ->needs(JusibeClient::class)
             ->give(function () {
-
                 $jusibeConfig = config('services.jusibe');
 
-                if(is_null($jusibeConfig)) {
+                if (is_null($jusibeConfig)) {
                     throw InvalidConfiguration::configurationNotSet();
                 }
 

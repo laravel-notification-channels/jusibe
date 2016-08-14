@@ -55,4 +55,3 @@ class JusibeMessage
         return $this;
     }
 }
-
