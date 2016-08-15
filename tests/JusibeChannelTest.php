@@ -24,9 +24,6 @@ class JusibeChannelTest extends TestCase
     /** @var JusibeMessage */
     protected $message;
 
-    /** @var Dispatcher */
-    protected $events;
-
     public function setUp()
     {
         parent::setUp();
