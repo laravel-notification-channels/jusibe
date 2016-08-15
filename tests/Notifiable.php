@@ -11,6 +11,6 @@ class Notifiable
      */
     public function routeNotificationForJusibe()
     {
-        return 'phone';
+        return '+1234567890';
     }
 }
