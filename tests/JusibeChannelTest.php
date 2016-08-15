@@ -2,14 +2,9 @@
 
 namespace NotificationChannels\Jusibe\Test;
 
-use StdClass;
 use Mockery;
-use GuzzleHttp\Psr7\Response;
-use NotificationChannels\Jusibe\Test\Notifiable;
-use NotificationChannels\Jusibe\Test\TestNotification;
 use Illuminate\Notifications\Notification;
 use Orchestra\Testbench\TestCase;
-use PHPUnit_Framework_TestCase;
 use NotificationChannels\Jusibe\JusibeChannel;
 use NotificationChannels\Jusibe\JusibeMessage;
 use Unicodeveloper\Jusibe\Jusibe as JusibeClient;
@@ -62,14 +57,14 @@ class JusibeChannelTest extends TestCase
             ->with(Mockery::subset([
                 'to' => '+1234567890',
                 'from' => 'prosper',
-                'message' => 'myMessage'
+                'message' => 'myMessage',
             ]));
 
         $this->setExpectedException(CouldNotSendNotification::class);
         $this->channel->send($notifiable, $this->notification);
     }
 
-     /** @test */
+    /** @test */
     public function it_does_not_send_a_message_when_notifiable_does_not_have_route_notificaton_for_jusibe()
     {
         $this->notification->shouldReceive('toJusibe')->never();
@@ -90,7 +85,7 @@ class JusibeChannelTest extends TestCase
             ->with(Mockery::subset([
                 'to' => '+1234567890',
                 'from' => 'prosper',
-                'message' => 'myMessage'
+                'message' => 'myMessage',
             ]));
         $this->setExpectedException(CouldNotSendNotification::class);
         $this->channel->send($notifiable, $this->notification);
