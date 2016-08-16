@@ -53,7 +53,7 @@ Add your Jusibe Account Key, Acess Token, and From Number (optional) to your `co
     'key' => env('JUSIBE_PUBLIC_KEY'),
     'token' => env('JUSIBE_ACCESS_TOKEN'),
     'sms_from' => 'PROSPER'
-]
+],
 ...
 ```
 
