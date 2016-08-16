@@ -4,8 +4,9 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![StyleCI](https://styleci.io/repos/65673216/shield)](https://styleci.io/repos/65673216)
 [![Build Status](https://img.shields.io/travis/laravel-notification-channels/jusibe.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/jusibe)
-[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/jusibe.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/jusibe)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/8cbdda74-fb7c-49ec-8a6c-f8cef083bc69.svg?style=flat-square)](https://insight.sensiolabs.com/projects/8cbdda74-fb7c-49ec-8a6c-f8cef083bc69)
+[![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/jusibe.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/jusibe)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/jusibe/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/jusibe/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/jusibe.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/jusibe)
 
 This package makes it easy to send [Jusibe notifications](https://jusibe.com/docs/) with Laravel 5.3.
