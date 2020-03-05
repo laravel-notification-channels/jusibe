@@ -14,8 +14,8 @@
     "require": {
         "php": ">=7.0",
         "unicodeveloper/jusibe-php-lib": "1.0.*",
-        "illuminate/notifications": "~5.5 || ~6.0",
-        "illuminate/support": "~5.5 || ~6.0"
+        "illuminate/notifications": "~5.5 || ~6.0 || ~7.0",
+        "illuminate/support": "~5.5 || ~6.0 || ~7.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
