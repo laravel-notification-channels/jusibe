@@ -9,7 +9,7 @@
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/jusibe/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/jusibe/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/jusibe.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/jusibe)
 
-This package makes it easy to send [Jusibe notifications](https://jusibe.com/docs/) with Laravel 5.5+ and 6.x.
+This package makes it easy to send [Jusibe notifications](https://jusibe.com/docs/) with Laravel 5.5+, 6.x, & 7.x.
 
 ## Contents
 
