@@ -2,9 +2,9 @@
 
 namespace NotificationChannels\Jusibe;
 
+use Illuminate\Support\ServiceProvider;
 use NotificationChannels\Jusibe\Exceptions\InvalidConfiguration;
 use Unicodeveloper\Jusibe\Jusibe as JusibeClient;
-use Illuminate\Support\ServiceProvider;
 
 class JusibeServiceProvider extends ServiceProvider
 {
