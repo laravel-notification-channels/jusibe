@@ -3,14 +3,14 @@
 namespace NotificationChannels\Jusibe\Test;
 
 use NotificationChannels\Jusibe\JusibeMessage;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class JusibeMessageTest extends PHPUnit_Framework_TestCase
+class JusibeMessageTest extends TestCase
 {
     /** @var \NotificationChannels\Jusibe\JusibeMessage */
     protected $message;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

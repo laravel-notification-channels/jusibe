@@ -2,13 +2,13 @@
 
 namespace NotificationChannels\Jusibe\Test;
 
-use Mockery;
 use Illuminate\Notifications\Notification;
-use Orchestra\Testbench\TestCase;
+use Mockery;
+use NotificationChannels\Jusibe\Exceptions\CouldNotSendNotification;
 use NotificationChannels\Jusibe\JusibeChannel;
 use NotificationChannels\Jusibe\JusibeMessage;
+use Orchestra\Testbench\TestCase;
 use Unicodeveloper\Jusibe\Jusibe as JusibeClient;
-use NotificationChannels\Jusibe\Exceptions\CouldNotSendNotification;
 
 class JusibeChannelTest extends TestCase
 {
@@ -24,7 +24,7 @@ class JusibeChannelTest extends TestCase
     /** @var JusibeMessage */
     protected $message;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->jusibe = Mockery::mock(JusibeClient::class);
@@ -33,7 +33,7 @@ class JusibeChannelTest extends TestCase
         $this->message = Mockery::mock(JusibeMessage::class);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
         parent::tearDown();
@@ -49,7 +49,6 @@ class JusibeChannelTest extends TestCase
             ->with($notifiable)
             ->andReturn($this->message);
 
-
         $this->jusibe->shouldReceive('sendSMS')
             ->with(Mockery::subset([
                 'to' => '+1234567890',
@@ -57,7 +56,7 @@ class JusibeChannelTest extends TestCase
                 'message' => 'myMessage',
             ]));
 
-        $this->setExpectedException(CouldNotSendNotification::class);
+        $this->expectException(CouldNotSendNotification::class);
         $this->channel->send($notifiable, $this->notification);
     }
 
@@ -65,7 +64,7 @@ class JusibeChannelTest extends TestCase
     public function it_does_not_send_a_message_when_notifiable_does_not_have_route_notificaton_for_jusibe()
     {
         $this->notification->shouldReceive('toJusibe')->never();
-        $this->setExpectedException(CouldNotSendNotification::class);
+        $this->expectException(CouldNotSendNotification::class);
         $this->channel->send(new NotifiableWithoutRouteNotificationForJusibe, $this->notification);
     }
 
@@ -84,14 +83,14 @@ class JusibeChannelTest extends TestCase
                 'from' => 'prosper',
                 'message' => 'myMessage',
             ]));
-        $this->setExpectedException(CouldNotSendNotification::class);
+        $this->expectException(CouldNotSendNotification::class);
         $this->channel->send($notifiable, $this->notification);
     }
 }
 
 class NotifiableWithoutRouteNotificationForJusibe extends Notifiable
 {
-    public function routeNotificationFor($channel)
+    public function routeNotificationFor($driver, $notification = null)
     {
         return false;
     }
